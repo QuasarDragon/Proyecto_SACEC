@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.fondocolor{
+	font-family:Verdana, Geneva, sans-serif;
+	background-color:#CCC;
+	text-decoration:none;
+}
+
+.fondocolor:hover{
+	font-family: Verdana, Geneva, sans-serif;
+	background-color: #0CF;
+	color: #FFFFFF;
+	box-shadow: #000;
+	text-decoration: none;
+	font-size: 12px;
+	text-align: center;
+}
+	
+
+	
