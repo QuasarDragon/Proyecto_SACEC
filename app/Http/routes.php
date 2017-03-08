@@ -16,14 +16,21 @@ Route::get('/', function () {
 });
 
 
-Route::get('Index', function () {
-    return view('Index');
+Route::get('Ambiente', function () {
+    return view('Ambientes');
 });
 
-Route::get('ingresar', function () {
-    return view('ingresar');
+Route::get('Equipos', function () {
+    return view('Equipos');
 });
 
 Route::get('Eliminar', function () {
     return view('Eliminar');
 });
+
+Route::get('Consultar', function () {
+    return view('Consultar');
+});
+
+Route::post('equipos', 'sacecController@Ambientes'
+);

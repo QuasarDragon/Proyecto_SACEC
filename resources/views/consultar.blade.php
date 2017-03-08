@@ -24,10 +24,10 @@
           <td bgcolor="#FFFFFF" class="letra"><a href="{{url('ingresar')}}">Dar de alta</td>
         </tr>
         <tr>
-          <td bgcolor="#FFFFFF" class="letra">Dar de baja</td>
+          <td bgcolor="#FFFFFF" class="letra"><a href="{{url('Eliminar')}}">Dar de baja</td>
         </tr>
         <tr>
-          <td bgcolor="#FFFFFF" class="letra"><a href="{{url('Consultar')}}">Consultar</td>
+          <td bgcolor="#FFFFFF" class="letra">Consultar</td>
         </tr>
         <tr>
           <td bgcolor="#FFFFFF" class="letra">Actualizar</td>
@@ -37,7 +37,6 @@
       <td width="108" bgcolor="#FFFFFF" class="center">Ambiente</td>
       <td width="295" bgcolor="#FFFFFF" class="center">Marca</td>
       <td width="218" bgcolor="#FFFFFF" class="center">Nùmero del Equipo</td>
-      <td width="739" bgcolor="#FFFFFF" class="center">Descripciòn</td>
     </tr>
     <tr>
       <td colspan="5">&nbsp;</td>
@@ -61,4 +60,3 @@
   </p>
   <p>&nbsp;</p>
 </form>
-
