@@ -16,9 +16,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('Ambiente', function () {
-    return view('Ambientes');
-});
+
 
 Route::get('Equipos', function () {
     return view('Equipos');
@@ -33,4 +31,6 @@ Route::get('Consultar', function () {
 });
 
 Route::post('equipos', 'sacecController@Ambientes'
+);
+Route::get('Ambientes', 'ambienteController@Index'
 );

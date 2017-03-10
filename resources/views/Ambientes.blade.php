@@ -12,31 +12,33 @@
   color: #FFF;
 }
 a:link {
-  color: #0F0;
+  color: #fffffff;
 }
 </style>
 </head>
 
 <body>
-<table width="187" border="1">
-  <tr>
-   <li><td width="96" height="19" bgcolor="#" class="letra"><a href="#" ><span style="color:#FFF">Dar de alta</span></a>
-   </li>
-    <li><a href="#" class="parent"><span style="color:#FFF"">Ambientes</span></a>
-                      </li>
-    
-                
-   
-  </tr>
-  <tr>
-    <td height="20" bgcolor="#" class="letra">Dar de baja
-  </tr>
-  <tr>
-    <td height="41" bgcolor="#" class="letra">Consultar  
-  </tr>
-  <tr>
-    <td height="41" bgcolor="#" class="letra">Actualizar  
-  </tr>
+
+@extends ('layout.master')
+@section ('content')
+
+<table width="400" border="1">
+</tr>
+
+
+@foreach($ambiente as $aulas)
+<tr>
+<td>{{$aulas->Id}}).</td>
+<td>{{$aulas->Numero_de_ambiente}}</td>
+<td><a href="{{url('ingresar',$aulas->Id)}}">Dar de alta</a></td>
+<td><a href="{{url('eliminar',$aulas->Id)}}">Dar de baja</a></td>
+</tr>
+
+
+
+@endforeach
+
+@endsection
 </table>
 </body>
 </html>

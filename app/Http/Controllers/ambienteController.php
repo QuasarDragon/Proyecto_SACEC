@@ -7,20 +7,19 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\ambientes;
-class sacecController extends Controller
+class ambienteController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-      
-       $data =Request()->all();
-       ambientes::create($data); 
     
-   }
+public function index()
+    {
+        $ambiente=ambientes::all();
+        return view ('Ambientes', compact('ambiente'));
+    }
 
 
 
