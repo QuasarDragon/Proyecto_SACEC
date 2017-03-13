@@ -18,19 +18,25 @@ Route::get('/', function () {
 
 
 
+
+Route::get('Ambientes', function () {
+    return view('Ambientes');
+});
+
 Route::get('Equipos', function () {
     return view('Equipos');
 });
 
-Route::get('Eliminar', function () {
-    return view('Eliminar');
-});
+
 
 Route::get('Consultar', function () {
     return view('Consultar');
 });
 
-Route::post('equipos', 'sacecController@Ambientes'
-);
-Route::get('Ambientes', 'ambienteController@Index'
-);
+Route::post('Equipos', 'sacecController@Ambientes');
+
+
+Route::get('Ambientes', 'ambienteController@Index');
+
+
+

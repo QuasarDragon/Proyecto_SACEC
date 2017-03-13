@@ -34,10 +34,11 @@ center {
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
+
   <table width="519" height="489" border="1" align="center">
     <tr>
       <td height="379" colspan="2" bgcolor="#CCCCCC"><h1 id="center">Ingresar Datos</h1>
-        <p><span class="letra">Fecha de ingreso:
+        <p><span class="letra">Fecha de ingreso: 
   <input type="date" name="Fecha_de_ingreso" id="Fecha_de_ingreso" /> 
         </span></p>
       <p><span class="letra">Marca: 
@@ -96,7 +97,7 @@ center {
       <textarea name="Descripcion" id="Descripcion" placeholder="Escriba Aquí..." cols="70" rows="3"></textarea></td>
     </tr>
     <tr>
-      <td width="421" bgcolor="#CCCCCC" class="letra"><a href="Index">Volver a Inicio</a></td>
+      <td width="421" bgcolor="#CCCCCC" class="letra"><a href="Ambientes">Volver a Inicio</a></td>
       <td width="82" class="letra"><input type="submit" name="guardar" id="guardar" value="Guardar datos" /></td>
     </tr>
   </table>

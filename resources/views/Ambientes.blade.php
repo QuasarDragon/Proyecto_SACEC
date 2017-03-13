@@ -21,24 +21,26 @@ a:link {
 
 @extends ('layout.master')
 @section ('content')
-
-<table width="400" border="1">
+<div align="center">
+<table  width="500" border="1" bgcolor="CCCCCC">
 </tr>
 
 
 @foreach($ambiente as $aulas)
 <tr>
-<td>{{$aulas->Id}}).</td>
+<td>{{$aulas->Id}})</td>
 <td>{{$aulas->Numero_de_ambiente}}</td>
-<td><a href="{{url('ingresar',$aulas->Id)}}">Dar de alta</a></td>
+<td><a href="{{url('Equipos')}}">Ingresar Equipo</a></td>
 <td><a href="{{url('eliminar',$aulas->Id)}}">Dar de baja</a></td>
+<td><a href="{{url('Consultar',$aulas->Id)}}">Consultar Equipo</a></td>
+<td><a href="{{url('Actualizar',$aulas->Id)}}">Actualizar</a></td>
 </tr>
-
 
 
 @endforeach
 
 @endsection
+</div>
 </table>
 </body>
 </html>
