@@ -1,6 +1,3 @@
-@extends('layout.master')
-@section('content')
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -28,30 +25,22 @@ center {
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="{{url('Equipos')}}">
-{!!csrf_field()!!}
+<form id="form1" name="form1" method="post" action="">
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-
   <table width="519" height="489" border="1" align="center">
     <tr>
-      <td height="379" colspan="2" bgcolor="#CCCCCC"><h1 id="center">Ingresar Datos</h1>
-       <p><span class="letra">id ambiente: 
-        <input type="text"  name="fk_id_ambiente" id="Marca" value="{{$id}}" />
-      </span></p>
-
-      
-
-       <p><span class="letra">Fecha de ingreso: 
-  <input type="date" name="Fecha_de_ingreso" id="Fecha_de_ingreso" /> 
+      <td height="379" colspan="2" bgcolor="#CCCCCC"><h1 id="center">Ambiente 100</h1>
+        <p><span class="letra">Fecha de ingreso:
+  <input type="text" name="fecha" id="fecha" /> 
         </span></p>
       <p><span class="letra">Marca: 
-        <input type="text" name="Marca" id="Marca" />
+        <input type="text" name="marca" id="marca" />
       </span></p>
       <p><span class="letra">Numero de equipo:</span>
-<select name="Numero_de_equipo" id="Numero_de_equipo">
+<select name="select" id="select">
   <option selected="selected" >seleccionar</option>
   <option value="1">1</option>
           <option value="2">2</option>
@@ -82,32 +71,31 @@ center {
       </p>
       <p>Codigo de Mouse: 
         <label for="Mouse"></label>
-        <input type="text" name="Codigo_de_mouse" id="Codigo_de_mouse" />
+        <input type="text" name="Mouse" id="Mouse" />
       </p>
       <p>Codigo de Teclado: 
         <label for="teclado"></label>
-        <input type="text" name="Codigo_de_teclado" id="Codigo_de_teclado" />
+        <input type="text" name="teclado" id="teclado" />
       </p>
       <p>Codigo de Pantalla: 
         <label for="pantalla"></label>
-        <input type="text" name="Codigo_de_pantalla" id="Codigo_de_pantalla" />
+        <input type="text" name="pantalla" id="pantalla" />
       </p>
       <p>Codigo del CPU: 
         <label for="cpu"></label>
-        <input type="text" name="Codigo_del_cpu" id="Codigo_del_cpu" />
+        <input type="text" name="cpu" id="cpu" />
       </p></td>
     </tr>
     <tr>
       <td height="77" colspan="2" bgcolor="#CCCCCC" class="letra">Descripciòn: 
         <label for="textarea"></label>
-      <textarea name="Descripcion" id="Descripcion" placeholder="Escriba Aquí..." cols="70" rows="3"></textarea></td>
+      <textarea name="textarea" id="textarea" cols="70" rows="3"></textarea></td>
     </tr>
     <tr>
-      <td width="421" bgcolor="#CCCCCC" class="letra"><a href="Ambientes">Volver atras</a></td>
+      <td width="421" bgcolor="#CCCCCC" class="letra"><a href="Index">Volver a Inicio</a></td>
       <td width="82" class="letra"><input type="submit" name="guardar" id="guardar" value="Guardar datos" /></td>
     </tr>
   </table>
 </form>
 </body>
 </html>
-@endsection

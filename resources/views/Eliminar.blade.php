@@ -1,64 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
 <style type="text/css">
 .letra {
   font-family: Verdana, Geneva, sans-serif;
-  color: #000;
-  font-size: 14px;
+  color: #0FF;
 }
-.center {
-  text-align: center;
+.letra {
+  color: #FFF;
 }
-.center {
-  text-align: center;
-}
-.derecha {
-  text-align: right;
+a:link {
+  color: #fffffff;
 }
 </style>
-<form name="form1" method="post" action="">
-  <h1 class="center">SISTEMA DE ADMINISTRACIÒN Y CONTROL DE LOS EQUIPO DE COMPUTOS</h1>
-  <p>&nbsp;</p>
-  <table width="1542" height="476" border="1" align="left" bgcolor="#CCCCCC" class="letra">
-    <tr>
-      <td width="113" rowspan="2"><table width="113" height="176" border="1" bgcolor="#"><a href="{{url('Index')}}"><img src="i.JPG" width="27" height="27"></a>
-        <tr>
-          <td bgcolor="#FFFFFF" class="letra"><a href="{{url('ingresar')}}">Dar de alta</td>
-        </tr>
-        <tr>
-          <td bgcolor="#FFFFFF" class="letra">Dar de baja</td>
-        </tr>
-        <tr>
-          <td bgcolor="#FFFFFF" class="letra"><a href="{{url('Consultar')}}">Consultar</td>
-        </tr>
-        <tr>
-          <td bgcolor="#FFFFFF" class="letra">Actualizar</td>
-        </tr>
-      </table></td>
-      <td width="29" bgcolor="#FFFFFF" height="35" class="center">Id</td>
-      <td width="108" bgcolor="#FFFFFF" class="center">Ambiente</td>
-      <td width="295" bgcolor="#FFFFFF" class="center">Marca</td>
-      <td width="218" bgcolor="#FFFFFF" class="center">Nùmero del Equipo</td>
-      <td width="739" bgcolor="#FFFFFF" class="center">Descripciòn</td>
-    </tr>
-    <tr>
-      <td colspan="5">&nbsp;</td>
-    </tr>
-  </table>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p><span class="derecha"></span>
-    <input name="eliminar" type="submit" class="center" id="eliminar" value="Eliminar">
-  </p>
-  <p>&nbsp;</p>
-</form>
+</head>
 
+<body>
+
+@extends ('layout.master')
+@section ('content')
+<div align="center">
+<table  width="1000" border="1" bgcolor="CCCCCC">
+</tr>
+<tr>
+<td>
+id
+</td>
+<td>
+Fecha de ingreso
+</td>
+<td>
+Marca
+</td>
+<td>
+Numero del equipo
+</td>
+<td>
+Codigo del mouse
+</td>
+<td>
+Codigo del teclado
+</td>
+<td>
+Codigo de la pantalla
+</td>
+<td>
+Codigo de la cpu
+</td>
+<td>
+descripcion
+</td>
+</tr>
+
+@foreach($equipo as $pc)
+<tr>
+<td>{{$pc->Id}})</td>
+<td>{{$pc->Fecha_de_ingreso}}</td>
+<td>{{$pc->Marca}}</td>
+<td>{{$pc->Numero_de_equipo}}</td>
+<td>{{$pc->Codigo_de_mouse}}</td>
+<td>{{$pc->Codigo_de_teclado}}</td>
+<td>{{$pc->Codigo_de_pantalla}}</td>
+<td>{{$pc->Codigo_del_cpu}}</td>
+<td>{{$pc->Descripcion}}</td>
+<td><a href="{{url('Eliminarequipo',$pc->Id)}}"> Eliminar </a></td>
+
+</tr>
+
+@endforeach
+
+@endsection
+</div>
+</table>
+</body>
+</html>

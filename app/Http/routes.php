@@ -17,26 +17,34 @@ Route::get('/', function () {
 
 
 
+//guardar datos
+Route::post('Equipos', 'EquipoController@Guardar');
 
 
-Route::get('Ambientes', function () {
-    return view('Ambientes');
-});
-
-Route::get('Equipos', function () {
-    return view('Equipos');
-});
-
-
-
-Route::get('Consultar', function () {
-    return view('Consultar');
-});
-
-Route::post('Equipos', 'sacecController@Ambientes');
-
-
+//vista de ambienete
 Route::get('Ambientes', 'ambienteController@Index');
 
+//vista de equipo
+Route::get('Equipos/{id}', 'EquipoController@cargaequipos');
+
+//listar equipos para eliminar
+Route::get('Listar_equipos/{id}', 'EquipoController@Index');
 
 
+Route::get('Eliminarequipo/{id}', 'EquipoController@eliminarequipo');
+
+
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+Route::get('home', function () {
+    return view('home');
+});

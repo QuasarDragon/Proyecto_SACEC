@@ -22,25 +22,38 @@ a:link {
 @extends ('layout.master')
 @section ('content')
 <div align="center">
-<table  width="500" border="1" bgcolor="CCCCCC">
+<table  width="550" border="1" bgcolor="CCCCCC">
 </tr>
 
 
 @foreach($ambiente as $aulas)
 <tr>
 <td>{{$aulas->Id}})</td>
-<td>{{$aulas->Numero_de_ambiente}}</td>
-<td><a href="{{url('Equipos')}}">Ingresar Equipo</a></td>
-<td><a href="{{url('eliminar',$aulas->Id)}}">Dar de baja</a></td>
+<td>Ambiente {{$aulas->Numero_de_ambiente}} </td>
+<td><a href="{{url('Equipos',$aulas->Id)}}">Ingresar Equipo</a></td>
+<td><a href="{{url('Listar_equipos',$aulas->Id)}}">Dar de baja</a></td>
 <td><a href="{{url('Consultar',$aulas->Id)}}">Consultar Equipo</a></td>
 <td><a href="{{url('Actualizar',$aulas->Id)}}">Actualizar</a></td>
 </tr>
-
 
 @endforeach
 
 @endsection
 </div>
 </table>
+<style type="text/css">
+.center {
+	text-align: center;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+}
+</style>
+<table width="407" border="1" align="center">
+  <tr>
+    <td width="200" bgcolor="#99CCFF" class="center">Agregar nuevo  ambiente</td>
+    <td width="200" bgcolor="#99CCFF" class="center">Eliminar ambiente</td>
+  </tr>
+</table>
+
 </body>
 </html>
