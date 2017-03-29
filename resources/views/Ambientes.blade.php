@@ -7,6 +7,7 @@
 .letra {
   font-family: Verdana, Geneva, sans-serif;
   color: #0FF;
+
 }
 .letra {
   color: #FFF;
@@ -32,7 +33,6 @@ a:link {
 <td>Ambiente {{$aulas->Numero_de_ambiente}} </td>
 <td><a href="{{url('Equipos',$aulas->Id)}}">Ingresar Equipo</a></td>
 <td><a href="{{url('Listar_equipos',$aulas->Id)}}">Dar de baja</a></td>
-<td><a href="{{url('Consultar',$aulas->Id)}}">Consultar Equipo</a></td>
 <td><a href="{{url('Actualizar',$aulas->Id)}}">Actualizar</a></td>
 </tr>
 
@@ -48,10 +48,11 @@ a:link {
 	font-size: 14px;
 }
 </style>
-<table width="407" border="1" align="center">
+<table width="550" border="1" align="center">
   <tr>
     <td width="200" bgcolor="#99CCFF" class="center">Agregar nuevo  ambiente</td>
     <td width="200" bgcolor="#99CCFF" class="center">Eliminar ambiente</td>
+    <td width="200" bgcolor="#99CCFF" class="center"><a href="{{url('consultar_activo')}}">Consultar</a></td>
   </tr>
 </table>
 

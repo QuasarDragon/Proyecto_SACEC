@@ -21,17 +21,36 @@ Route::get('/', function () {
 Route::post('Equipos', 'EquipoController@Guardar');
 
 
+
 //vista de ambienete
 Route::get('Ambientes', 'ambienteController@Index');
+
+
 
 //vista de equipo
 Route::get('Equipos/{id}', 'EquipoController@cargaequipos');
 
-//listar equipos para eliminar
+
+
+//listar todos los equipos para eliminar
 Route::get('Listar_equipos/{id}', 'EquipoController@Index');
 
 
+/* eliminar el equipo ya registrado*/
 Route::get('Eliminarequipo/{id}', 'EquipoController@eliminarequipo');
+
+
+
+
+/* mostrar la vista de consultar */
+Route::get('consultar_activo', 'EquipoController@consultarequipo');
+
+
+
+
+/* consultar el codigo del activo  y mostrarlo*/
+Route::post('consultar_activo', 'EquipoController@consultaractivo');
+
 
 
 

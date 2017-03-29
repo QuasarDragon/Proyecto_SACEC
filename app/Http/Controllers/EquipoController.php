@@ -45,10 +45,37 @@ public function cargaequipos($id)
 
 public function eliminarequipo($id)
     {
-            
-            equipos::findOrFail($id)->delete();
-            return redirect()->route('Ambientes');
-    }    
 
+            echo $id;
+            $equipo = equipos::findOrFail($id);         
+            $equipo->delete();
+            //return redirect()->route('Ambientes');
+    }  
+
+
+
+
+    /** para mostrar la vista de consultar **/  
+
+    public function consultarequipo()
+    {
+
+        return view('consultar');    
+    }  
+
+
+
+///////////////////////////////////////////////////////
+
+         public function consultaractivo(Request $request)
+    {
+        $dato=Request()->get('activo');
+
+        $activo = DB::table('equipos')
+                     ->select(DB::raw('*'))
+                     ->where('Codigo_del_cpu', '=', $dato)
+                     ->get();
+        return view ('consultar', compact('activo'));
+    }
 
 }

@@ -1,62 +1,56 @@
 <style type="text/css">
 .letra {
   font-family: Verdana, Geneva, sans-serif;
-  color: #000;
   font-size: 14px;
 }
-.center {
-  text-align: center;
-}
-.center {
-  text-align: center;
-}
-.derecha {
-  text-align: right;
+.letra1 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 30px;
 }
 </style>
-<form name="form1" method="post" action="">
-  <h1 class="center">SISTEMA DE ADMINISTRACIÒN Y CONTROL DE LOS EQUIPO DE COMPUTOS</h1>
+<form name="form1" method="post" action="{{url('consultar_activo')}}">
+{!!csrf_field()!!}
   <p>&nbsp;</p>
-  <table width="1542" height="476" border="1" align="left" bgcolor="#CCCCCC" class="letra">
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h1 align="center" class="letra1">CONSULTA DE EQUIPO</h1>
+  <table width="244" border="0" align="center">
     <tr>
-      <td width="113" rowspan="2"><table width="113" height="176" border="1" bgcolor="#"><a href="{{url('Index')}}"><img src="i.JPG" width="27" height="27"></a>
-        <tr>
-          <td bgcolor="#FFFFFF" class="letra"><a href="{{url('ingresar')}}">Dar de alta</td>
-        </tr>
-        <tr>
-          <td bgcolor="#FFFFFF" class="letra"><a href="{{url('Eliminar')}}">Dar de baja</td>
-        </tr>
-        <tr>
-          <td bgcolor="#FFFFFF" class="letra">Consultar</td>
-        </tr>
-        <tr>
-          <td bgcolor="#FFFFFF" class="letra">Actualizar</td>
-        </tr>
-      </table></td>
-      <td width="29" bgcolor="#FFFFFF" height="35" class="center">Id</td>
-      <td width="108" bgcolor="#FFFFFF" class="center">Ambiente</td>
-      <td width="295" bgcolor="#FFFFFF" class="center">Marca</td>
-      <td width="218" bgcolor="#FFFFFF" class="center">Nùmero del Equipo</td>
-    </tr>
-    <tr>
-      <td colspan="5">&nbsp;</td>
+      <td width="54"><input type="submit" name="buscar" id="buscar" value="Buscar🔎"></td>
+      <td width="361"><label for="textfield"></label>
+      <input name="activo" type="text" placeholder="Numero de Activo" id="activo" size="30"></td>
     </tr>
   </table>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p><span class="derecha"></span>
-    <input name="eliminar" type="submit" class="center" id="eliminar" value="Eliminar">
-  </p>
+
+@extends ('layout.master')
+@section ('content')
+
+<div align="center">
+<table  width="550" border="1" bgcolor="CCCCCC">
+</tr>
+@if($activo)
+
+@foreach($activo as $equipo)
+<tr>
+<td>{{$equipo->Id}})</td>
+<td>{{$equipo->Fecha_de_ingreso}}</td>
+<td>{{$equipo->Marca}}</td>
+<td>{{$equipo->Numero_de_equipo}}</td>
+<td>{{$equipo->Codigo_de_mouse}}</td>
+<td>{{$equipo->Codigo_de_teclado}}</td>
+<td>{{$equipo->Codigo_de_pantalla}}</td>
+<td>{{$equipo->Codigo_del_cpu}}</td>
+<td>{{$equipo->Descripcion}}</td>
+</tr>
+
+@endforeach
+@endif
+</table>
+
+@endsection
   <p>&nbsp;</p>
 </form>
